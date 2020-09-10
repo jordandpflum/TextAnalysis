@@ -6,8 +6,17 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 import pandas as pd
 
 def edmundWebScraper(url, pages):
+    """
+    Scrape Data from a given forum on Edmund's
+    :param url: url of page one of Edmund forum
+           pages: number of pages of forum to scrape
+    :return: returns a pandas dataframe of comments
+    """
+    # Initialize Driver
     driver = webdriver.Chrome('chromedriver', options=chrome_options)
     driver.get(url)
+
+    # Create Empty Dataframe
     comments = pd.DataFrame(columns=['Date', 'user_id', 'comments'])
     for i in range(pages):
         print(i)
@@ -19,6 +28,11 @@ def edmundWebScraper(url, pages):
 
 
 def scrapePageComments(driver):
+    """
+        Scrape Data from a given page of a forum on Edmund's
+        :param driver: webdriver
+        :return: returns a pandas dataframe of comments
+        """
     page_comments = pd.DataFrame(columns=['Date', 'user_id', 'comments'])
     ids = driver.find_elements_by_xpath("//*[contains(@id,'Comment_')]")
 
