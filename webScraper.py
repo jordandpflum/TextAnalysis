@@ -20,7 +20,7 @@ def edmundWebScraper(url, pages):
     comments = pd.DataFrame(columns=['Date', 'user_id', 'comments'])
     for i in range(pages):
         print(i)
-        page_comments = scrapePageComments()
+        page_comments = scrapePageComments(driver)
         comments = comments.append(page_comments)
         driver.find_element_by_class_name('Next').click()
 
