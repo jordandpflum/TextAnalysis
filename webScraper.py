@@ -29,10 +29,10 @@ def edmundWebScraper(url, pages):
 
 def scrapePageComments(driver):
     """
-        Scrape Data from a given page of a forum on Edmund's
-        :param driver: webdriver
-        :return: returns a pandas dataframe of comments
-        """
+    Scrape Data from a given page of a forum on Edmund's
+    :param driver: webdriver
+    :return: returns a pandas dataframe of comments
+    """
     page_comments = pd.DataFrame(columns=['Date', 'user_id', 'comments'])
     ids = driver.find_elements_by_xpath("//*[contains(@id,'Comment_')]")
 
