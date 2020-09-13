@@ -11,6 +11,6 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 import pandas as pd
 
 url = 'https://forums.edmunds.com/discussion/3941/general/x/i-spotted-a-new-insert-make-model-today'
-pages = 5
+pages = 336
 comments = edmundWebScraper(url, pages)
 comments.to_csv("results.csv")
