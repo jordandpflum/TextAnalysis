@@ -7,7 +7,7 @@ def replaceModelWBrand(tokens, wordBrandCSV):
     :param wordBrandCSV: CSV of word-brand association
     :return: a list of allBrands mentioned in the comments
     """
-    brandWordAssociation = pd.read_csv('car models and brands.csv')
+    brandWordAssociation = pd.read_csv('wordBrandCSV')
     brandWords = brandWordAssociation['Model']
     brandWordAssociation.set_index('Model')
     brandWordAssociation = brandWordAssociation.to_dict()
